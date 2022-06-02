@@ -1,0 +1,151 @@
+<!-- Latest compiled and minified CSS -->
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<title>Prescripciones medicas</title>
+
+
+<div class="container-fluid pt-3">
+    <h3 class="font-weight-light text-black">Prescripciones médicas</h3>
+    <div class="small  text-light">Estado de las prescripciones</div>
+    <div class="row flex-row flex-sm-nowrap py-3">
+        <div class="col-sm-6 col-md-4 col-xl-3">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <h6 class="card-title text-uppercase text-truncate py-2">To Do</h6>
+                    <div class="items border border-light">
+                        <div class="card draggable shadow-sm" id="cd1" draggable="true" ondragstart="drag(event)">
+                            <div class="card-body p-2">
+                                <div class="card-title">
+                                    
+                                    <a href="" class="lead font-weight-light">Prescripción #1</a>
+                                </div>
+                                <p>
+                                    Descripción de la prescripción #1
+                                </p>
+                                <button class="btn btn-primary btn-sm">Ver detalles</button>
+                            </div>
+                        </div>
+                        <div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="clearDrop(event)"> &nbsp; </div>
+                        <div class="card draggable shadow-sm" id="cd2" draggable="true" ondragstart="drag(event)">
+                            <div class="card-body p-2">
+                                <div class="card-title">
+                                    <a href="" class="lead font-weight-light">Prescripción #2</a>
+                                </div>
+                                <p>
+                                    Descripción de la prescripción #2
+                                </p>
+                                <button class="btn btn-primary btn-sm">Ver detalles</button>
+                            </div>
+                        </div>
+                        <div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="clearDrop(event)"> &nbsp; </div>
+                        <div class="card draggable shadow-sm" id="cd3" draggable="true" ondragstart="drag(event)">
+                            <div class="card-body p-2">
+                                <div class="card-title">
+                                    <a href="" class="lead font-weight-light">Prescripción #3</a>
+                                </div>
+                                <p>
+                                    Descripción de la prescripción #3
+                                </p>
+                                <button class="btn btn-primary btn-sm">Ver detalles</button>
+                            </div>
+                        </div>
+                        <div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="clearDrop(event)"> &nbsp; </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-xl-3">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <h6 class="card-title text-uppercase text-truncate py-2">In-progress</h6>
+                    <div class="items border border-light">
+                        <div class="card draggable shadow-sm" id="cd1" draggable="true" ondragstart="drag(event)">
+                            <div class="card-body p-2">
+                                <div class="card-title">
+                                    <a href="" class="lead font-weight-light">Prescripción #4</a>
+                                </div>
+                                <p>
+                                    Detalles prescripción #4.
+                                </p>
+                                <button class="btn btn-primary btn-sm">Ver detalles</button>
+                            </div>
+                        </div>
+                        <div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="clearDrop(event)"> &nbsp; </div>
+                        <div class="card draggable shadow-sm" id="cd2" draggable="true" ondragstart="drag(event)">
+                            <div class="card-body p-2">
+                                <div class="card-title">
+                                    <a href="" class="lead font-weight-light">Prescripción #5</a>
+                                </div>
+                                <p>
+                                    Detalles prescripción #5
+                                </p>
+                                <button class="btn btn-primary btn-sm">Ver detalles</button>
+                            </div>
+                        </div>
+                        <div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="clearDrop(event)"> &nbsp; </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-xl-3">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <h6 class="card-title text-uppercase text-truncate py-2">Review</h6>
+                    <div class="items border border-light">
+                        <div class="card draggable shadow-sm" id="cd9" draggable="true" ondragstart="drag(event)">
+                            <div class="card-body p-2">
+                                <div class="card-title">
+                                    <a href="" class="lead font-weight-light">Prescripción #6</a>
+                                </div>
+                                <p>
+                                    Detalles prescripción #6
+                                </p>
+                                <button class="btn btn-primary btn-sm">Ver detalles</button>
+                            </div>
+                        </div>
+                        <div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="clearDrop(event)"> &nbsp; </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-xl-3">
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="card-title text-uppercase text-truncate py-2">Completadas</h6>
+                    <div class="items border border-light">
+                        <div class="card draggable shadow-sm" id="cd11" draggable="true" ondragstart="drag(event)">
+                            <div class="card-body p-2">
+                                <div class="card-title">
+                                    <a href="" class="lead font-weight-light">Prescripción #7</a>
+                                </div>
+                                <p>
+                                    Detalles prescripción #7
+                                </p>
+                                <button class="btn btn-primary btn-sm">Ver detalles</button>
+                            </div>
+                        </div>
+                        <div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="clearDrop(event)"> &nbsp; </div>
+                        <div class="card draggable shadow-sm" id="cd12" draggable="true" ondragstart="drag(event)">
+                            <div class="card-body p-2">
+                                <div class="card-title">
+                                    <a href="" class="lead font-weight-light">Prescripción #8</a>
+                                </div>
+                                <p>
+                                    Detalles prescripción #8
+                                </p>
+                                <button class="btn btn-primary btn-sm">Ver detalles</button>
+                            </div>
+                        </div>
+                        <div class="dropzone rounded" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="clearDrop(event)"> &nbsp; </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
