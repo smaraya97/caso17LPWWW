@@ -27,7 +27,10 @@ app.use(express.urlencoded({extended: false}));
 //Routes
 app.use(require('./routes/users'));
 app.use(require('./routes/index'));
-
+app.use(require('./routes/informe'));
+app.use(require('./routes/inventario'));
+app.use(require('./routes/preInscription'));
+app.use(require('./routes/medicamentosCaducados'));
 //Static Files
 app.use(express.static(path.join(__dirname, 'public')));
 
