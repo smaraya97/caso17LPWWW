@@ -1,0 +1,24 @@
+{
+  "name": "medilab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smaraya97/https---github.com-smaraya97-caso17LPWWW.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smaraya97/https---github.com-smaraya97-caso17LPWWW/issues"
+  },
+  "homepage": "https://github.com/smaraya97/https---github.com-smaraya97-caso17LPWWW#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
