@@ -9,11 +9,14 @@
   <link rel="stylesheet" href="../css/style-inventario.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../js/search.js"></script>
+
+ 
+
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light" >
-  <a class="navbar-brand" href="#">Farmacia Dr. Hevia</a>
+  <a class="navbar-brand" href="#">Farmacia</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -21,14 +24,15 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link" href="mainDoctor.html" id="button">Home</a>
       <a class="nav-item nav-link active" href="inventario.html" id="nav">Inventario</a>
-      <a class="nav-item nav-link" href="#Nutz" id="button">Prescripciónes</a>
+      <a class="nav-item nav-link" href="kanban.html" id="button">Prescripciónes</a>
       <a class="nav-item nav-link disabled" href="#" id="button">Informe de Stock</a>
+      <a class="nav-item nav-link " href="caducados.html" id="button">Medicamentos caducados</a>
     </div>
   </div>
 </nav>
 
 <div class="container mt-5">
-  <input type="text" id="search" onkeyup="Search()" placeholder="nombre ... de medicamento...">
+  <input type="text" id="search" onkeyup="Search()" placeholder="Ingrese nombre del medicamento...">
   <div class="row">
     <table class="table" id="myTable">
       <thead>
