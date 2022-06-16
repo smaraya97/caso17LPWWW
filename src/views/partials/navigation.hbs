@@ -30,7 +30,7 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
         <li class = "nav-item"><a class="nav-link" href="/" id="button">Home</a></li>
-        <li class = "nav-item"><a class="nav-link" href="/inventario" id="nav">Inventario</a></li>
+        <li class = "nav-item"><a class="nav-link" href="/inventario" id="button">Inventario</a></li>
         <li class = "nav-item"><a class="nav-link" href="/preInscription" id="button">Prescripciónes</a></li>    
         <li class = "nav-item"><a class="nav-link" href="/informeStock" id="button">Informe de Stock</a></li>
         <li class = "nav-item"><a class="nav-link" href="/medicamentosCaducados" id="button">Medicamentos Caducados</a></li>
@@ -38,8 +38,5 @@
   </div>
 </nav>
 
-<script>
-$("li > a").click(function(){
-    $(this).attr("id","nav");
-});
+<script src = "/js/navbar_handler.js">
 </script>
