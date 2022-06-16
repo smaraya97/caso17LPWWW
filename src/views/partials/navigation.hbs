@@ -22,18 +22,24 @@
     </nav>
 </div>-->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navigation">
   <a class="navbar-brand" href="#">Farmacia Dr. Sus</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="/" id="button">Home</a>
-      <a class="nav-item nav-link active" href="/inventario" id="nav">Inventario</a>
-      <a class="nav-item nav-link" href="/preInscription" id="button">Prescripciónes</a>
-      <a class="nav-item nav-link" href="/informeStock" id="button">Informe de Stock</a>
-      <a class="nav-item nav-link" href="/medicamentosCaducados" id="button">Medicamentos Caducados</a>
+        <li class = "nav-item"><a class="nav-link" href="/" id="button">Home</a></li>
+        <li class = "nav-item"><a class="nav-link" href="/inventario" id="nav">Inventario</a></li>
+        <li class = "nav-item"><a class="nav-link" href="/preInscription" id="button">Prescripciónes</a></li>    
+        <li class = "nav-item"><a class="nav-link" href="/informeStock" id="button">Informe de Stock</a></li>
+        <li class = "nav-item"><a class="nav-link" href="/medicamentosCaducados" id="button">Medicamentos Caducados</a></li>
     </div>
   </div>
 </nav>
+
+<script>
+$("li > a").click(function(){
+    $(this).attr("id","nav");
+});
+</script>
