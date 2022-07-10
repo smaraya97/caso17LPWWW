@@ -5,6 +5,6 @@ const mongoose = require('mongoose');
     .catch(err => console.error(err) )
 */
 
-const connection = mongoose.connect('mongodb+srv://tripledobleb:sebayandres123@cluster0.a682e.mongodb.net/?retryWrites=true&w=majority')
+const connection = mongoose.connect('mongodb+srv://Admin:1ANyhNhOqNrWGJue@clusterorigin.97pfy1r.mongodb.net/MediLab')
     .then(db => console.log("Se conecto correctamente"))
     .catch(err => console.error(err) )
