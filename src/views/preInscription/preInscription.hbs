@@ -19,7 +19,11 @@
 
 
 <body>
-    <div class="container-fluid pt-3">
+    <div class="me-auto p-2 bd-highlight">
+        <h2>Prescripciones Médicas</h2>
+    </div>
+    <div class="small  text-black">Estado de las prescripciones</div>
+    {{!-- <div class="container-fluid pt-3">
         <h3 class="font-weight-light text-black">Prescripciones médicas</h3>
         <div class="small  text-light">Estado de las prescripciones</div>
         <div class="row flex-row flex-sm-nowrap py-3">
@@ -157,7 +161,34 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
+    <div class="accordion" id="accordionExample">
+        {{#each preins}}
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading{{this._id}}">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapse{{this._id}}" aria-expanded="true" aria-controls="collapse{{this._id}}">
+            <strong>Rut del paciente: {{this.rutPaciente}} </strong>
+            </button>
+            </h2>
+        <div id="collapse{{this._id}}" class="accordion-collapse collapse" aria-labelledby="heading{{this._id}}"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+            <strong>Fecha emisión:</strong> {{this.fechaEmision}} <br>
+            <strong>Estado:</strong> {{this.estado}} <br>
+            <strong>Nombre Médico:</strong> {{this.nombreMedico}} <br>
+            <strong>Medicamentos: </strong> <br>
+            {{#each this.medicamentos}}
+            Nombre Medicamento: {{this.nombre}} <br>
+            Gramos: {{this.gramos}} <br>
+            Instrucciones: {{this.instrucciones}} <br>
+            {{/each}}
+            </div>
+        </div>
+        </div>
+        {{/each}}
+  </div>
+  
 </body>
 
 
