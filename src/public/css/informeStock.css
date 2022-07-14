@@ -1,16 +1,17 @@
 h6{
-    color: white;
+    color: black;
 }
 
 h2{
-    color: white;
+    color: black;
 }
 th{
-    color: white;
+    color: black;
     font-size: large;
+
 }
 td{
-    text-align: end;
+    text-align: start;
     font-size: large;
-    color: white;
+    color: black;
 }
