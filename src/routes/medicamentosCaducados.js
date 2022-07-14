@@ -17,12 +17,12 @@ router.get('/medicamentosCaducados', async (req,res) =>{
             Lotes
         });
     } */
-    const lote = await Lote.find().lean();
-    console.log(lote);
-    res.render('caducados/caducados',{
+    /* const lote = await Lote.find().lean();
+    console.log(lote); */
+    /* res.render('caducados/caducados',{
         lote
-    });
-    //res.render('caducados/caducados');
+    }); */
+    res.render('caducados/caducados');
     //res.send('letal');
 });
 

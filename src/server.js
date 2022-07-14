@@ -1,22 +1,20 @@
 const express = require('express');
 const path = require('path');
-const app = express();
 const exphbs = require('express-handlebars');
 
 let hbs = exphbs.create({});
 
 const mongoose = require('mongoose');
 
-/*const connection = mongoose.connect('mongodb://localhost/dtes-db-app')
-    .then(db => console.log("Se conecto correctamente"))
-    .catch(err => console.error(err) )
-*/
-
-const connection = mongoose.connect('mongodb+srv://Admin:1ANyhNhOqNrWGJue@clusterorigin.97pfy1r.mongodb.net/MediLab',{useNewUrlParser: true, useUnifiedTopology: true})
-    .then(db => console.log("Se conecto correctamente a mongoDB"))
-    .catch(err => console.error(err) )
+/* const connection = mongoose.connect('mongodb://localhost/dtes-db-app')
+.then(db => console.log("Se conecto correctamente"))
+.catch(err => console.error(err) )
+ */
 
 
+//Iniciar express
+const app = express();
+require('./database');
 //setting
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'))
