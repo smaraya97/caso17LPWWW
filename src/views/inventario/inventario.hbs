@@ -1,6 +1,7 @@
 <!-- For preview Ctrl+Shft+V -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Inventario</title>
   <meta charset="utf-8">
@@ -10,25 +11,69 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/js/inventario.js"></script>
 </head>
+
 <body>
 
-<h2>Inventario</h2>
-<div class="accordion" id="accordionExample">
-  {{#each meds}}
+  <div class="d-flex bd-highlight mb-3">
+    <div class="me-auto p-2 bd-highlight">
+      <h2>Inventario</h2>
+    </div>
+    <div class="bd-highlight p-2">
+      <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#addLote"> Nuevo
+        Medicamento</button>
+    </div>
+  </div>
+  <div class="accordion" id="accordionExample">
+    {{#each meds}}
     <div class="accordion-item">
       <h2 class="accordion-header" id="heading{{this.nombre}}">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{this.nombre}}" aria-expanded="true" aria-controls="collapse{{this.nombre}}">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapse{{this.nombre}}" aria-expanded="true" aria-controls="collapse{{this.nombre}}">
           <strong>{{this.nombre}} - {{gramos}}mg</strong>
         </button>
       </h2>
-      <div id="collapse{{this.nombre}}" class="accordion-collapse collapse" aria-labelledby="heading{{this.nombre}}" data-bs-parent="#accordionExample">
+      <div id="collapse{{this.nombre}}" class="accordion-collapse collapse" aria-labelledby="heading{{this.nombre}}"
+        data-bs-parent="#accordionExample">
         <div class="accordion-body">
-          <strong>SKU:</strong> {{this.sku}} <strong>Gramos:</strong> {{this.gramos}} <strong>Comprimidos:</strong> {{this.comprimidos}}
+          <strong>SKU:</strong> {{this.sku}} <strong>Gramos:</strong> {{this.gramos}} <strong>Comprimidos:</strong>
+          {{this.comprimidos}}
         </div>
       </div>
     </div>
-  {{/each}}
-</div>
+    {{/each}}
+  </div>
 
+  <!-- Modal -->
+  <div class="modal fade" id="addLote" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Agregar Medicamentos</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="/addMed" method="post">
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="text" name="sku" class="form-control" placeholder="Codigo">
+            </div>
+            <div class="form-group">
+              <input type="text" name="nombre" class="form-control" placeholder="Nombre" autofocus>
+            </div>
+            <div class="form-group">
+              <input type="number" name="comprimidos" class="form-control" placeholder="N° Comprimidos">
+            </div>
+            <div class="form-group">
+              <input type="number" name="gramos" class="form-control" placeholder="Gramos">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Agregar Medicamento</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>
