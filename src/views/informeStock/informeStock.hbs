@@ -42,8 +42,8 @@
                                     <td>{{nombre}}</td>
                                     <td>{{cantidadDisponible}}</td>
                                     <td>{{cantidadEntregada}}</td>
-                                    <td>{{createdAt}}</td>
-                                    <td>{{fechaVencimiento}}</td>
+                                    <td>{{dateFormat createdAt true}}</td>
+                                    <td>{{dateFormat fechaVencimiento true}}</td>
                                     <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                             data-bs-target="#createInforme">
                                             Crear

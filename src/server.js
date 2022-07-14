@@ -11,6 +11,18 @@ const mongoose = require('mongoose');
 .catch(err => console.error(err) )
  */
 
+hbs.handlebars.registerHelper('dateFormat', (date, flag)=>{
+    var dd = date.getDate();
+    var mm = date.getMonth()+1;
+    if ( dd < 10){
+        dd = '0' + dd;
+    }
+    if (mm < 10){
+        mm = '0' + mm;
+    }
+    return flag ? dd + '/' + mm + '/' + date.getFullYear() : 
+    date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+});
 
 //Iniciar express
 const app = express();
