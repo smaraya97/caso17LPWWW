@@ -19,7 +19,6 @@ router.get('/informeStock', async (req,res) =>{
 router.post('/addLote', async (req,res)=>{
     const {codigo, sku, nombre, cantidadDisponible,fechaVencimiento, gramos, comprimidos} = req.body;
     //res.send('se agrego un medicamento');
-    let cantidadEntregada = cantidadDisponible;
     const medicamento = await Medicamento.findOne({sku}).lean();
 
     const newLote = new Lote({
@@ -28,7 +27,7 @@ router.post('/addLote', async (req,res)=>{
         sku,
         nombre: medicamento.nombre,
         cantidadDisponible,
-        cantidadEntregada,
+        cantidadEntregada: 0,
         fechaVencimiento,
         gramos,
         comprimidos
