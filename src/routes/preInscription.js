@@ -8,4 +8,18 @@ router.get('/preInscription', async (req,res) =>{
     res.render('preInscription/preInscription',{preins:preins});
 });
 
+router.post('/addPrescription', async (req,res)=>{
+    const {rutPaciente, nombreMedico, fechaEmision, estado, medicamentos} = req.body;
+    const newPrescription = new Prescripcion({
+        _id: new mongoose.Types.ObjectId(),
+        rutPaciente,
+        nombreMedico,
+        fechaEmision,
+        estado,
+        medicamentos
+    });
+    await newPrescription.save();
+    res.redirect('back');
+});
+
 module.exports = router;

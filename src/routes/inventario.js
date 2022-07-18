@@ -17,6 +17,7 @@ router.post('/addMed', async (req,res)=>{
         nombre,
         comprimidos,
         gramos
+        
     });
     await newMedicamento.save();
     res.redirect('back');

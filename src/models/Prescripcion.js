@@ -6,7 +6,7 @@ const PrescripcionSchema = new Schema({
     _id: Schema.Types.ObjectId,
     rutPaciente: {type: String, required: true},
     nombreMedico: {type: String, required: true},
-    fechaEmision: {type: Date, required: true},
+    fechaEmision: {type: String, required: true},
     estado: {type: String, required: true}, 
     medicamentos: [{
         nombre: {type: String, required: true},
