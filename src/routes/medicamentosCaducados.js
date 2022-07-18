@@ -23,11 +23,9 @@ router.get('/medicamentosCaducados', async (req,res) =>{
     for (i = 0; i < lote.length; i++) {
         date = lote[i].fechaVencimiento;
         if (date > now) {
-            lote.splice(i,i);
-        } else {
-            year = date.getFullYear();
+            year  = date.getFullYear();
             month = date.getMonth()+1;
-            dt = date.getDate();
+            dt    = date.getDate();
             if (dt < 10) {
                 dt = '0' + dt;
             }
@@ -35,14 +33,14 @@ router.get('/medicamentosCaducados', async (req,res) =>{
                 month = '0' + month;
             }
             lote[i].fechaVencimiento = year+'-' + month + '-'+dt;
+        } else {
+            lote.splice(i,i);
         }
       } 
 
     res.render('caducados/caducados',{
         lote
     });
-    //res.render('caducados/caducados');
-    //res.send('letal');
 });
 
 
