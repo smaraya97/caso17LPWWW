@@ -18,7 +18,14 @@ router.get('/medicamentosCaducados', async (req,res) =>{
         });
     } */
     const lote = await Lote.find().lean();
-    //console.log(lote);
+    var a = new Date();
+
+    for (i = 0; i < lote.length; i++) {
+        if (lote[i].fecha_vencimiento < a) {
+            console.log(lote[i]);
+        }
+      } 
+
     res.render('caducados/caducados',{
         lote
     });
