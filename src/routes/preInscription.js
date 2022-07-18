@@ -16,8 +16,9 @@ router.post('/addPrescription', async (req,res)=>{
         nombreMedico,
         fechaEmision,
         estado,
-        medicamentos
+        medicamentos 
     });
+    
     await newPrescription.save();
     res.redirect('back');
 });
