@@ -22,7 +22,7 @@ router.get('/medicamentosCaducados', async (req,res) =>{
 
     for (i = 0; i < lote.length; i++) {
         date = lote[i].fechaVencimiento;
-        if (date < now) {
+        if (date > now) {
             lote.splice(i,i);
         } else {
             year = date.getFullYear();
