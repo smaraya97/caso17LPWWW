@@ -18,19 +18,29 @@ router.get('/medicamentosCaducados', async (req,res) =>{
         });
     } */
     const lote = await Lote.find().lean();
-    var a = new Date();
+    var now = new Date();
 
     for (i = 0; i < lote.length; i++) {
-        if (lote[i].fecha_vencimiento < a) {
-            console.log(lote[i]);
+        date = lote[i].fechaVencimiento;
+        if (date > now) {
+            year  = date.getFullYear();
+            month = date.getMonth()+1;
+            dt    = date.getDate();
+            if (dt < 10) {
+                dt = '0' + dt;
+            }
+            if (month < 10) {
+                month = '0' + month;
+            }
+            lote[i].fechaVencimiento = year+'-' + month + '-'+dt;
+        } else {
+            lote.splice(i,i);
         }
       } 
 
     res.render('caducados/caducados',{
         lote
     });
-    //res.render('caducados/caducados');
-    //res.send('letal');
 });
 
 
