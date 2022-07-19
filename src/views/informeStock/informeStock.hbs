@@ -49,7 +49,7 @@
                             <td>{{dateFormat createdAt true}}</td>
                             <td>{{dateFormat fechaVencimiento true}}</td>
                             <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#createInforme">
+                                    data-bs-target="#createInforme" onclick="createInforme('{{ json this }}')">
                                     Crear
                                 </button></td>
                         </tr>
@@ -65,15 +65,14 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Stock generado</h5>
+                    <h5 class="modal-title" id="tituloInforme">
+                        </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <h5>Informe Generado para el medicamento tanto</h5>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <canvas id="myChart" width="400" height="400">
+
+                    </canvas>
                 </div>
 
             </div>
@@ -127,6 +126,7 @@
     </div>
 
     <script src="/js/informeStock.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 </body>
 
 </html>

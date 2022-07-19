@@ -24,6 +24,10 @@ hbs.handlebars.registerHelper('dateFormat', (date, flag)=>{
     date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
 });
 
+hbs.handlebars.registerHelper('json', (context) =>{
+    return JSON.stringify(context);
+});
+
 //Iniciar express
 const app = express();
 require('./database');
