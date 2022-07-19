@@ -14,30 +14,6 @@
   <div class="container-fluid p-3 text-black text-left">
     <h1>Medicamentos caducados</h1>
     <p class="small">Lista de medicamentos que pasan de su fecha de caducidad</p>
-    <!--<div class="accordion" id="accordion">
-      {{#each lote}}
-        <div class="card">
-          <div class="card-header">
-            <div class="row">
-              <a class="btn col-10 text-start " data-bs-toggle="collapse" href="#collapse{{this.codigo}}">
-                {{this.nombre}} {{this.gramos}}gm.
-              </a>
-              <div class="col-2 text-danger">
-                Fecha de vencimiento:  {{this.fechaVencimiento}}
-              </div>
-            </div>
-          </div>
-          <div id="collapse{{this.codigo}}" class="collapse">
-            <div class="card-body">
-              <div> Numero de lote: {{this.codigo}}</div>
-              <div> sku: {{this.sku}} </div>
-              <div> Estado: vencido </div>
-            </div>
-          </div>
-        </div>
-      {{/each}}     
-    </div>-->
-
     <div class="accordion" id="accordionExample">
       {{#each lote}}
       <div class="accordion-item">
@@ -61,10 +37,12 @@
               <div class="col-10">
                 <div> Numero de lote: {{this.codigo}}</div>
                 <div> SKU: {{this.sku}} </div>
-                <div> Estado: vencido </div>
+                <div> Estado: Vencido </div>
               </div>
               <div class="col-2">
-                <button type="button" class="btn btn-danger">Dar lote de baja</button>
+                <form action="/medicamentosCaducados" method="post">
+                  <button name="_id" class="btn btn-danger" value="{{this._id}}">Dar lote de baja</button>
+                </form>
               </div>
             </div>
           </div>

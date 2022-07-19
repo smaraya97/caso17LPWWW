@@ -44,12 +44,30 @@
             <strong>Nombre Médico:</strong> {{this.nombreMedico}} <br>
             <strong>Medicamentos: </strong> 
             <ul class="list-group list-group-flush">
-                {{#each this.medicamentos}}
-                <li class="list-group-item">
-                <strong>Nombre Medicamento: </strong> {{this.nombre}} <br>
-                <strong>Gramos: </strong> {{this.gramos}} <br>
-            <strong> Instrucciones: </strong> {{this.instrucciones}} <br>
-            {{/each}}</li>
+              {{#with this as | presc | }}
+              {{#each this.medicamentos}}
+                <div class="row">
+                  <div class="col-10">
+                    <li class="list-group-item">
+                    <strong>Nombre Medicamento: </strong> {{this.nombre}} <br>
+                    <strong>Gramos: </strong> {{this.gramos}} <br>
+                    <strong> Instrucciones: </strong> {{this.instrucciones}} <br>
+                  </div>
+                  <div class="col-2">
+                    <form action="/reservarMed" method="post">
+                      <div class="form-group">
+                        <input type="number" name="cantidad" class="form-control" placeholder="Cantidad">
+                      </div>
+                      <input type="hidden" name="idPrescripcion" value="{{presc._id}}" />
+                      <input type="hidden" name="rutPaciente" value="{{presc.rutPaciente}}" />
+                      <input type="hidden" name="medicamento" value="{{this.nombre}}" />
+                      <input type="hidden" name="gramos" value="{{this.gramos}}" />
+                      <button type="submit" class="btn btn-danger">Reservar Medicamento</button>
+                    </form>
+                  </div>
+                </div>
+              {{/each}}</li>
+              {{/with}}
             </ul>  
             
             </div>

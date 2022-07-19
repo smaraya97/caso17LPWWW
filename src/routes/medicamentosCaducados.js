@@ -8,21 +8,12 @@ const Lote = require('../models/Lote');
 
 
 router.get('/medicamentosCaducados', async (req,res) =>{
-    /* const Lotes = await Lote.find().lean();
-    console.log(Lotes);
-    if (Lotes == null){
-        res.render('caducados/caducados');
-    } else{
-        res.render('caducados/caducados',{
-            Lotes
-        });
-    } */
     const lote = await Lote.find().lean();
-    var now = new Date();
-
+    let now = new Date();
     for (i = 0; i < lote.length; i++) {
         date = lote[i].fechaVencimiento;
-        if (date > now) {
+        disp = lote[i].cantidadDisponible;
+        if ((date <= now) && (disp != 0)) {
             year  = date.getFullYear();
             month = date.getMonth()+1;
             dt    = date.getDate();
@@ -34,12 +25,27 @@ router.get('/medicamentosCaducados', async (req,res) =>{
             }
             lote[i].fechaVencimiento = year+'-' + month + '-'+dt;
         } else {
-            lote.splice(i,i);
+            lote.splice(i,1);
+            i--;
         }
-      } 
+    } 
 
     res.render('caducados/caducados',{
         lote
+    });
+});
+
+router.post('/medicamentosCaducados', async (req,res) => {
+    const idObj = req.body;
+    const id = idObj._id;
+    console.log(id);
+    console.log(idObj);
+    Lote.findByIdAndUpdate(id,{"cantidadDisponible": 0}, function(err, result){
+        if (err){
+            res.send(err);
+        } else {
+            res.send(result);
+        }
     });
 });
 
