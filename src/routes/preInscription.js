@@ -1,30 +1,32 @@
 const router = require('express').Router();
 const {default:mongoose} = require('mongoose');
+
+//Modelos
 const Prescripcion = require('../models/Prescripcion');
+const Medicamento = require('../models/Medicamento');
 
 router.get('/preInscription', async (req,res) =>{
     const preins = await Prescripcion.find().lean();
+    const meds = await Medicamento.find().lean();
     console.log(preins)
-    res.render('preInscription/preInscription',{preins:preins});
+    res.render('preInscription/preInscription',{
+        preins:preins,
+        meds
+    });
 });
 
 router.post('/addPrescription', async (req,res)=>{
-    const {rutPaciente, nombreMedico, fechaEmision, estado, medicamentos,nombre,gramos,instrucciones} = req.body;
+    const {rutPaciente, nombreMedico, fechaEmision, estado, nameMed} = req.body;
+    console.log("nameMeds", nameMed);
+    const meds = await Medicamento.find({nombre: {$in: nameMed}}).lean();
     const newPrescription = new Prescripcion({
         _id: new mongoose.Types.ObjectId(),
         rutPaciente,
         nombreMedico,
         fechaEmision,
         estado,
-        medicamentos,
-        nombre,
-        gramos,
-        instrucciones
+        medicamentos: meds
     });
-    var object = {nombre:nombre, gramos:gramos, instrucciones:instrucciones};
-    newPrescription.medicamentos.push(object);
-
-    
     await newPrescription.save();
     res.redirect('back');
 });

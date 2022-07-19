@@ -24,7 +24,3 @@ function setFormulario(){
     setValueFecha();
     console.log(fechaVencimiento.value);
 }
-
-function showValue(){
-    console.log(fechaVencimiento.value);
-}

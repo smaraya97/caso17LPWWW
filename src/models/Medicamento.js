@@ -8,6 +8,7 @@ const MedicamentoSchema = new Schema({
     nombre: {type: String, required: true},
     comprimidos: {type: Number, required: true},
     gramos: {type: Number, required: true},
+    instrucciones: {type: String, required: true},
 },{timestamps: true});
 
 module.exports = mongoose.model('Medicamento', MedicamentoSchema);
