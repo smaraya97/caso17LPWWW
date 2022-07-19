@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/informeStock.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="container-fluid mt-4 p-4 ">
+                <div class="d-flex bd-highlight mb-3">
+                    <div class="me-auto p-2 bd-highlight">
+                        <h2>Informes de Stock</h2>
+                    </div>
+                    <div class="bd-highlight p-2">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#addLote"
+                            onclick="setFormulario()">
+                            Nuevo Lote</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="container d-flex justify-content-center mt-5">
+                <table class="table" id="table">
+                    <thead>
+                        <th>Codigo</th>
+                        <th>Producto</th>
+                        <th>N° Disponible</th>
+                        <th>N° Entregada</th>
+                        <th>Fecha Lote</th>
+                        <th>Fecha Vencimiento</th>
+                        <th>Crear informe</th>
+                    </thead>
+                    <tbody>
+                        {{#each lotes}}
+                        <tr>
+                            <td>{{codigo}}</td>
+                            <td>{{nombre}}</td>
+                            <td>{{cantidadDisponible}}</td>
+                            <td>{{cantidadEntregada}}</td>
+                            <td>{{dateFormat createdAt true}}</td>
+                            <td>{{dateFormat fechaVencimiento true}}</td>
+                            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#createInforme">
+                                    Crear
+                                </button></td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal No Venta-->
+    <div class="modal fade" id="createInforme" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Stock generado</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5>Informe Generado para el medicamento tanto</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal agregar Lote -->
+    <div class="modal fade" id="addLote" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Agregar Medicamentos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="/addLote" method="post">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input type="text" name="codigo" class="form-control" placeholder="Codigo">
+                        </div>
+                        <div class="form-floating">
+                            <select name="sku" class="form-select" id="subCategoriaAdd"
+                                aria-label="Floating label select example">
+                                {{#each meds}}
+                                <option value="{{sku}}">{{nombre}} </option>
+                                {{/each}}
+                            </select>
+                            <label for="subCategoriaAdd">Medicamentos</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="cantidadDisponible" class="form-control"
+                                placeholder="N° Disponibles">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="gramos" class="form-control" placeholder="Gramos">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="comprimidos" class="form-control" placeholder="Comprimidos">
+                        </div>
+                        <div class="form-group">
+                            <input type="date" name="fechaVencimiento" class="form-control"
+                                placeholder="Fecha de Vencimiento">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Agregar Lote</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/informeStock.js"></script>
+</body>
+
+</html>

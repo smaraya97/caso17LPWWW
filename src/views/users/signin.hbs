@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="icon" href="img/login.ico"/>
+    
+	<meta name="author" content="Yuli Petrilli">
+    <meta name="description" content="Free login template made with Bootstrap 5">
+	
+	<!-- / Bootstrap Core -->	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- / FontAwesome -->	
+	<link rel="stylesheet" type="text/css" href="/css/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!-- / Custom style -->	
+	<link rel="stylesheet" type="text/css"  href="/css/signin.css">
+</head>
+<body>
+	
+<main>
+	<div class="form-main-container">
+		<div class="form-wrapper">
+			<div class="form-header">
+				<span class="form-title">
+					<strong>Logearse</strong>
+				</span>
+			</div>
+
+			<form class="form-content">
+				<div class="input-wrapper">
+					<input class="input-style" type="text" name="username" placeholder="Nombre de usuario" required>
+					<span class="input-style-focus"></span>
+				</div>
+
+				<div class="input-wrapper">
+					<div class="input-group">
+						<input class="form-control" type="password" placeholder="Contraseña" id="password" required>
+						<span class="form-control-focus"></span>
+						<div class="input-group-addon" onclick="passwordVisibility();">
+							<i class="fa fa-eye" id="showPass"></i>
+							<i class="fa fa-eye-slash d-none" id="hidePass"></i>
+						</div>
+					</div>
+				</div>
+			 
+				<button class="button-style w-100">
+					Login
+				</button>
+				<a href="/informeStock"> Entrar a informes</a>
+				<div class="checkbox-wrapper mt-4">
+					<input type="checkbox" class="checkbox-style" id="checkbox" name="remember-me">
+					<label class="label-checkbox-style" for="checkbox">
+						Recordar credenciales
+					</label>
+
+					<a href="#" class="txt-style2">
+						<strong>Olvidó su contraseña?</strong>
+					</a>
+				</div>
+				<a href="/users/signup"> Registrarse</a>
+				<p class="txt-style1 mt-5">No eres miembro? <a class="txt-style2" href="#"><strong>Registrarme!</strong></a></p>
+			</form>
+		</div>
+	</div>
+</main>
+
+<script src="js/password-visibility.js"></script>
+
+</body>
+</html>

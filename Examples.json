@@ -1,0 +1,62 @@
+{
+    "Lote":{
+        "Fecha vencimiento": "01/02/1997",
+        "Codigo lote":123456,
+        "Nombre": "Paracetamol",
+        "Cantidad_disponible": 59,
+        "Cantidad_entregados":45,
+        "sku" :"med-par-500",
+        "Gramos": 500,
+        "Comprimidos": 10
+    }
+    ,
+    "Prescripcion":{
+        "Medicamentos":[
+            {   
+                "Nombre": "Paracetamol", 
+                "Gramos": "500",
+                "Intrucciones" : "Consumir 2 comprimidos cada 12 horas"
+            },
+            {
+                "Nombre": "Tapsin Noche",
+                "Gramos": "200",
+                "Intrucciones": "Tomar uno en la noche el viernes"
+            }
+        ],
+        "Fecha_emision": "03/15/1997",
+        "Medico_emisor": "Juan Pablo Simi",
+        "Rut_paciente": 19664478
+    },
+    "Medicamento":{
+        "Nombre": "Paracetamol",
+        "sku":"med-par-500",
+        "comprimidos":10,
+        "Gramos":500
+    }, 
+    "Reservas": {
+        "Medicamento":"Paracetamol",
+        "Rut_paciente": 1966478,
+        "Cantidad": 3,
+        "Gramos": 500,
+        "id_prescripcion": 10,
+        "Fecha_reserva": "05/11/1995",
+        "Encargado_Farmacia" : "El pelao Diego"
+    },
+    "Cliente":{
+        "Nombre": "El loco esteban",
+        "Rut": 165445687,
+        "Telefono": 686963
+    },
+    "Medico":{
+        "Nombre":"Juan Pablo Simi",
+        "Rut":5685328,
+        "email": "laweacomi@gmail.com",
+        "constraseña": "123456789"
+    },
+    "Tecnico":{
+        "Nombre":"El pelao Diego",
+        "Rut":89451263,
+        "email": "unodeesos@gmail.com",
+        "constraseña": "123456789"
+    }
+}
