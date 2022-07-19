@@ -41,10 +41,25 @@ router.post('/reservarMed', async (req,res) => {
         rutPaciente: rutPaciente,
         medicamento: medicamento,
         gramos: gramos,
-        cantidad: cantidad
+        cantidad: cantidad,
+        encargadoFarmacia: "El Brayatan",
+        fechaReserva: now
     });
 
     await newReserva.save();
+    res.redirect('back');
+});
+
+router.post('/confirmarPresc', async (req,res) => {
+    const idObj = req.body;
+    const id = idObj._id;
+    Prescripcion.findByIdAndUpdate(id,{"estado": "Entregada"}, function(err, result){
+        if (err){
+            res.send(err);
+        } else {
+            res.redirect('back');
+        }
+    });
 });
 
 module.exports = router;

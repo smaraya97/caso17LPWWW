@@ -39,10 +39,19 @@
         <div id="collapse{{this._id}}" class="accordion-collapse collapse" aria-labelledby="heading{{this._id}}"
             data-bs-parent="#accordionExample">
             <div class="accordion-body">
-            <strong>Fecha emisión:</strong> {{this.fechaEmision}} <br>
-            <strong>Estado:</strong> {{this.estado}} <br>
-            <strong>Nombre Médico:</strong> {{this.nombreMedico}} <br>
-            <strong>Medicamentos: </strong> 
+              <div class="row">
+                <div class="col-10">
+                  <strong>Fecha emisión:</strong> {{this.fechaEmision}} <br>
+                  <strong>Estado:</strong> {{this.estado}} <br>
+                  <strong>Nombre Médico:</strong> {{this.nombreMedico}} <br>
+                  <strong>Medicamentos: </strong> 
+                </div>
+                <div class="col-2">
+                  <form action="/confirmarPresc" method="post">
+                    <button name="_id" value="{{this._id}}" class="btn btn-success">Confirmar Entrega</button>
+                  </form>
+                </div>
+              </div>
             <ul class="list-group list-group-flush">
               {{#with this as | presc | }}
               {{#each this.medicamentos}}
@@ -106,17 +115,6 @@
                 </div>
               {{/each}}
             </div>
-            {{!-- <div id="add-new-medicamento">
-              <div class="form-group">
-                <input type="text" name="nombre" class="form-control" placeholder="Nombre del medicamento">
-              </div>
-              <div class="form-group">
-                <input type="text" name="gramos" class="form-control" placeholder="Gramos">
-              </div>
-              <div class="form-group">
-                <input type="text" name="instrucciones" class="form-control" placeholder="Instrucciones">
-              </div>
-            </div> --}}
             <button type="button" class="btn btn-primary" data-bs-toggle="modal"data-bs-target="#addMedicamento">Añadir medicamento
             </button>
             

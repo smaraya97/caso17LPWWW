@@ -38,13 +38,11 @@ router.get('/medicamentosCaducados', async (req,res) =>{
 router.post('/medicamentosCaducados', async (req,res) => {
     const idObj = req.body;
     const id = idObj._id;
-    console.log(id);
-    console.log(idObj);
     Lote.findByIdAndUpdate(id,{"cantidadDisponible": 0}, function(err, result){
         if (err){
             res.send(err);
         } else {
-            res.send(result);
+            res.redirect('back');
         }
     });
 });
