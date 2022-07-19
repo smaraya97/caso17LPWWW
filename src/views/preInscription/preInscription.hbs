@@ -39,10 +39,19 @@
         <div id="collapse{{this._id}}" class="accordion-collapse collapse" aria-labelledby="heading{{this._id}}"
             data-bs-parent="#accordionExample">
             <div class="accordion-body">
-            <strong>Fecha emisión:</strong> {{this.fechaEmision}} <br>
-            <strong>Estado:</strong> {{this.estado}} <br>
-            <strong>Nombre Médico:</strong> {{this.nombreMedico}} <br>
-            <strong>Medicamentos: </strong> 
+              <div class="row">
+                <div class="col-10">
+                  <strong>Fecha emisión:</strong> {{this.fechaEmision}} <br>
+                  <strong>Estado:</strong> {{this.estado}} <br>
+                  <strong>Nombre Médico:</strong> {{this.nombreMedico}} <br>
+                  <strong>Medicamentos: </strong> 
+                </div>
+                <div class="col-2">
+                  <form action="/confirmarPresc" method="post">
+                    <button name="_id" value="{{this._id}}" class="btn btn-success">Confirmar Entrega</button>
+                  </form>
+                </div>
+              </div>
             <ul class="list-group list-group-flush">
               {{#with this as | presc | }}
               {{#each this.medicamentos}}

@@ -58,6 +58,8 @@ app.use(require('./routes/inventario'));
 app.use(require('./routes/preInscription'));
 app.use(require('./routes/medicamentosCaducados'));
 app.use(require('./routes/mediup'));
+app.use(require('./routes/reservados'));
+
 //Static Files
 app.use(express.static(path.join(__dirname, 'public')));
 
